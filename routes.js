@@ -32,6 +32,12 @@ const routes = [
         path: '/hello/{name?}', // ? can be used to make a parameter optional (nullable)
         handler: (request, h) => {
             const { name = "stranger" } = request.params;
+            const { lang } = request.query;
+
+            if (lang === 'id') {
+                return `Hai, ${name}!`;
+            }
+
             return `Hello, ${name}!`;
         },
     }
