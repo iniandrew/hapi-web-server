@@ -40,7 +40,7 @@ const routes = [
 
             return `Hello, ${name}!`;
         },
-    }
+    },
     {
         method: '*',
         path: '/{any*}',
