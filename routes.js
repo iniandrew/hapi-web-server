@@ -28,6 +28,14 @@ const routes = [
         },
     },
     {
+        method: 'GET',
+        path: '/hello/{name?}', // ? can be used to make a parameter optional (nullable)
+        handler: (request, h) => {
+            const { name = "stranger" } = request.params;
+            return `Hello, ${name}!`;
+        },
+    }
+    {
         method: '*',
         path: '/{any*}',
         handler: (request, h) => {
